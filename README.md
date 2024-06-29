@@ -1,1 +1,1 @@
-# javascript-template
+# weather-app
