@@ -15,8 +15,31 @@ async function getCurrentWeather(city) {
     }
     const data = await response.json();
     console.log(data);
+    processJsonCurrent(data);
   } catch (err) {
     console.error(`${err}`);
+  }
+}
+
+function processJsonCurrent(data) {
+  console.log(`Location: ${data.location.region}, ${data.location.country}`);
+  console.log(`Date and Time: ${data.location.localtime}`);
+
+  console.log(`Condition: ${data.current.condition.text}`);
+
+  console.log(
+    `Temperature: F - ${data.current.temp_f} C - ${data.current.temp_c}`
+  );
+  console.log(
+    `Wind: mph - ${data.current.wind_mph} km ${data.current.wind_km} Direction: ${data.current.wind_dir}`
+  );
+
+  console.log(`Humidity: ${data.current.humidity}%`);
+
+  if (data.current.is_day){
+    console.log("day");
+  } else {
+    console.log("night");
   }
 }
 
