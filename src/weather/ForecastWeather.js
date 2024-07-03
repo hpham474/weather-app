@@ -12,6 +12,8 @@ class ForecastWeather {
   #low_c;
   #humidity;
   #rainChance;
+  #sunrise;
+  #sunset;
   #hourlyWeather = [];
 
   constructor(
@@ -26,6 +28,8 @@ class ForecastWeather {
     low_c,
     humidity,
     rainChance,
+    sunrise,
+    sunset,
     hours
   ) {
     this.#date = date;
@@ -38,6 +42,8 @@ class ForecastWeather {
     this.#low_f = low_f;
     this.#low_c = low_c;
     this.#humidity = humidity;
+    this.#sunrise = sunrise;
+    this.#sunset = sunset;
     this.#rainChance = rainChance;
 
     hours.forEach((hour) => {
@@ -82,6 +88,12 @@ class ForecastWeather {
   }
   get hourlyWeather () {
     return this.#hourlyWeather;
+  }
+  get sunrise () {
+    return this.#sunrise;
+  }
+  get sunset () {
+    return this.#sunset;
   }
 
   print() {

@@ -12,8 +12,6 @@ class TodayWeather {
   #wind_dir;
   #humidity;
   #isDay;
-  #sunrise;
-  #sunset;
 
   constructor(
     name,
@@ -29,8 +27,6 @@ class TodayWeather {
     wind_dir,
     humidity,
     isDay,
-    sunrise,
-    sunset
   ) {
     this.#name = name;
     this.#location = location;
@@ -45,8 +41,6 @@ class TodayWeather {
     this.#wind_dir = wind_dir;
     this.#humidity = humidity;
     this.#isDay = isDay;
-    this.#sunrise = sunrise;
-    this.#sunset = sunset;
   }
 
   get name () {
@@ -88,12 +82,6 @@ class TodayWeather {
   get isDay () {
     return this.#isDay;
   }
-  get sunrise () {
-    return this.#sunrise;
-  }
-  get sunset () {
-    return this.#sunset;
-  }
 
   print() {
     console.log(`Location: ${this.#location}, ${this.#country}`);
@@ -113,9 +101,6 @@ class TodayWeather {
     } else {
       console.log("night");
     }
-
-    console.log(`Sun Set: ${this.#sunset}`);
-    console.log(`Sun Rise: ${this.#sunrise}`);
   }
 }
 

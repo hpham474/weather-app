@@ -13,6 +13,8 @@ function processForecast(data) {
     data.day.mintemp_c,
     data.day.avghumidity,
     data.day.daily_will_it_rain,
+    data.astro.sunrise,
+    data.astro.sunset,
     data.hour
   );
 
