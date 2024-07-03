@@ -2,6 +2,7 @@ import TodayWeather from "../weather/TodayWeather";
 
 function processToday(data) {
   const weather = new TodayWeather(
+    data.location.name,
     data.location.region,
     data.location.country,
     data.location.localtime,
@@ -10,7 +11,7 @@ function processToday(data) {
     data.current.temp_f,
     data.current.temp_c,
     data.current.wind_mph,
-    data.current.wind_km,
+    data.current.wind_kph,
     data.current.wind_dir,
     data.current.humidity,
     data.current.is_day,

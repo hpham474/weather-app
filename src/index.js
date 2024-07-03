@@ -1,6 +1,7 @@
 import "./style.css";
 import processToday from "./json/processToday";
 import processForecast from "./json/processForecast";
+import generateToday from "./interface/generateToday";
 
 const API = "7799c6fbb2534aaa8dc73800242806";
 const ForecastDays = 3;
@@ -64,3 +65,4 @@ console.log(weather);
 //weather.today.print();
 //weather.forecast[0].print();
 //weather.forecast[0].getHourly(0).print();
+generateToday(weather);

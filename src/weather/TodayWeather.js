@@ -1,4 +1,5 @@
 class TodayWeather {
+  #name;
   #location;
   #country;
   #date;
@@ -7,7 +8,7 @@ class TodayWeather {
   #avgtemp_f;
   #avgtemp_c;
   #wind_mph;
-  #wind_km;
+  #wind_kph;
   #wind_dir;
   #humidity;
   #isDay;
@@ -15,6 +16,7 @@ class TodayWeather {
   #sunset;
 
   constructor(
+    name,
     location,
     country,
     date,
@@ -23,13 +25,14 @@ class TodayWeather {
     avgtemp_f,
     avgtemp_c,
     wind_mph,
-    wind_km,
+    wind_kph,
     wind_dir,
     humidity,
     isDay,
     sunrise,
     sunset
   ) {
+    this.#name = name;
     this.#location = location;
     this.#country = country;
     this.#date = date;
@@ -38,7 +41,7 @@ class TodayWeather {
     this.#avgtemp_f = avgtemp_f;
     this.#avgtemp_c = avgtemp_c;
     this.#wind_mph = wind_mph;
-    this.#wind_km = wind_km;
+    this.#wind_kph = wind_kph;
     this.#wind_dir = wind_dir;
     this.#humidity = humidity;
     this.#isDay = isDay;
@@ -46,6 +49,9 @@ class TodayWeather {
     this.#sunset = sunset;
   }
 
+  get name () {
+    return this.#name;
+  }
   get location () {
     return this.#location;
   }
@@ -70,8 +76,8 @@ class TodayWeather {
   get wind_mph () {
     return this.#wind_mph;
   }
-  get wind_km () {
-    return this.#wind_km;
+  get wind_kph () {
+    return this.#wind_kph;
   }
   get wind_dir () {
     return this.#wind_dir;
@@ -97,7 +103,7 @@ class TodayWeather {
 
     console.log(`Temperature: F - ${this.#avgtemp_f} C - ${this.#avgtemp_c}`);
     console.log(
-      `Wind: mph - ${this.#wind_mph} km ${this.#wind_km} Direction: ${this.#wind_dir}`
+      `Wind: mph - ${this.#wind_mph} km ${this.#wind_kph} Direction: ${this.#wind_dir}`
     );
 
     console.log(`Humidity: ${this.#humidity}%`);
