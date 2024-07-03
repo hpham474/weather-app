@@ -6,6 +6,7 @@ function processToday(data) {
     data.location.country,
     data.location.localtime,
     data.current.condition.text,
+    data.current.condition.icon,
     data.current.temp_f,
     data.current.temp_c,
     data.current.wind_mph,

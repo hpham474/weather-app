@@ -4,6 +4,7 @@ function processForecast(data) {
   const weather = new ForecastWeather(
     data.date,
     data.day.condition.text,
+    data.day.condition.icon,
     data.day.avgtemp_f,
     data.day.avgtemp_c,
     data.day.maxtemp_f,

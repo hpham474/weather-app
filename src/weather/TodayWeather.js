@@ -3,6 +3,7 @@ class TodayWeather {
   #country;
   #date;
   #condition;
+  #conditionIcon;
   #avgtemp_f;
   #avgtemp_c;
   #wind_mph;
@@ -18,6 +19,7 @@ class TodayWeather {
     country,
     date,
     condition,
+    conditionIcon,
     avgtemp_f,
     avgtemp_c,
     wind_mph,
@@ -32,6 +34,7 @@ class TodayWeather {
     this.#country = country;
     this.#date = date;
     this.#condition = condition;
+    this.#conditionIcon = conditionIcon;
     this.#avgtemp_f = avgtemp_f;
     this.#avgtemp_c = avgtemp_c;
     this.#wind_mph = wind_mph;
@@ -41,6 +44,49 @@ class TodayWeather {
     this.#isDay = isDay;
     this.#sunrise = sunrise;
     this.#sunset = sunset;
+  }
+
+  get location () {
+    return this.#location;
+  }
+  get country () {
+    return this.#country;
+  }
+  get date () {
+    return this.#date;
+  }
+  get condition () {
+    return this.#condition;
+  }
+  get conditionIcon () {
+    return this.#conditionIcon;
+  }
+  get avgtemp_f () {
+    return this.#avgtemp_f;
+  }
+  get avgtemp_c () {
+    return this.#avgtemp_c;
+  }
+  get wind_mph () {
+    return this.#wind_mph;
+  }
+  get wind_km () {
+    return this.#wind_km;
+  }
+  get wind_dir () {
+    return this.#wind_dir;
+  }
+  get humidity () {
+    return this.#humidity;
+  }
+  get isDay () {
+    return this.#isDay;
+  }
+  get sunrise () {
+    return this.#sunrise;
+  }
+  get sunset () {
+    return this.#sunset;
   }
 
   print() {
