@@ -95,13 +95,15 @@ function generateHourly(data) {
       hourlyForecast.condition === "sunrise" ||
       hourlyForecast.condition === "sunset"
     ) {
-      time.textContent = hourlyForecast.time;
+      time.textContent = format(hourlyForecast.time, "hh:mm a");
       if (hourlyForecast.condition === "sunrise") {
         icon.src = sunrisePng;
       } else {
         icon.src = sunsetPng;
       }
-      condition.textContent = hourlyForecast.condition;
+      condition.textContent =
+        hourlyForecast.condition.charAt(0).toUpperCase() +
+        hourlyForecast.condition.slice(1);
 
       forecast.appendChild(time);
       forecast.appendChild(icon);
@@ -110,7 +112,7 @@ function generateHourly(data) {
       const temp_c = document.createElement("p");
       const temp_f = document.createElement("p");
 
-      time.textContent = hourlyForecast.time;
+      time.textContent = format(hourlyForecast.time, "hh:mm a");
       icon.src = `http:${hourlyForecast.conditionIcon}`;
       condition.textContent = hourlyForecast.condition;
       temp_c.textContent = `${hourlyForecast.temp_c} C`;

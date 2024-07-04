@@ -19,7 +19,7 @@ function generateToday(data) {
   name.textContent = data.today.name;
   location.textContent = data.today.location;
   country.textContent = data.today.country;
-  time.textContent = format(data.today.date, "p");
+  time.textContent = format(data.today.date, "LLL d p");
 
   locationDiv.appendChild(name);
   locationDiv.appendChild(location);

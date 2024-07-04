@@ -125,13 +125,16 @@ form {
 }
 
 .hourly > div {
+  padding: .5rem;
   display: grid;
-  grid-template-columns: repeat(27,8rem);
+  grid-template-columns: repeat(26,8rem);
   grid-auto-flow: column;
   gap: 1rem;
   overflow-x: scroll;
   justify-items: center;
-  align-items: center;
+
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b #64748b;
 }
 
 .hourly > div > div {
