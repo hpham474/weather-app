@@ -36,7 +36,7 @@ function generateToday(data) {
   conditionIcon.style.height = "5rem";
   conditionIcon.style.width = "5rem";
 
-  conditionIcon.src = data.today.conditionIcon;
+  conditionIcon.src = `http:${data.today.conditionIcon}`;
   condition.textContent = data.today.condition;
 
   conditionDiv.appendChild(conditionIcon);
