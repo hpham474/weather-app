@@ -3,12 +3,14 @@ import processToday from "./json/processToday";
 import processForecast from "./json/processForecast";
 import generateToday from "./interface/generateToday";
 import generateHourly from "./interface/generateHourly";
+import switchMeasurement from "./interface/setMeasurementUnit";
 
 const API = "7799c6fbb2534aaa8dc73800242806";
 const ForecastDays = 3;
 const defaultCity = "dallas";
-const btn = document.querySelector("button");
+const searchBtn = document.querySelector(".search");
 const search = document.querySelector("input");
+const formatBtn = document.querySelector(".format");
 
 async function getWeather(city) {
   try {
@@ -50,7 +52,7 @@ function printError(response) {
   );
 }
 
-btn.addEventListener("click", (event) => {
+searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   let city = defaultCity;
   if (search.value !== "") {
@@ -60,6 +62,8 @@ btn.addEventListener("click", (event) => {
   search.value = "";
 });
 
+formatBtn.addEventListener("click", switchMeasurement);
+
 const weather = await getWeather(defaultCity);
 
 console.log(weather);
@@ -68,3 +72,5 @@ console.log(weather);
 //weather.forecast[0].getHourly(0).print();
 generateToday(weather);
 generateHourly(weather);
+
+switchMeasurement();
