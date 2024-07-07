@@ -6,6 +6,8 @@ import rainPng from "../assets/rain.png";
 function generateToday(data) {
   const today = document.querySelector(".today");
 
+  today.innerHTML = "";
+
   // location elements
 
   const locationDiv = document.createElement("div");

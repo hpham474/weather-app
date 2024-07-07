@@ -5,6 +5,8 @@ import sunsetPng from "../assets/sunset.png";
 function generateHourly(data) {
   const hourly = document.querySelector(".hourly");
 
+  hourly.innerHTML = "";
+
   // get the next two days of hourly forecast
   const currentTime = data.today.date;
   const twoDays = data.forecast[0].hourlyWeather.concat(

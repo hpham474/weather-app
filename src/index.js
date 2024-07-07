@@ -14,20 +14,21 @@ const search = document.querySelector("input");
 const formatBtn = document.querySelector(".format");
 
 async function getWeather(city) {
-  try {
-    const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=${API}&q=${city}&days=${ForecastDays}`
-    );
-    if (response.status !== 200) {
-      const errorData = await response.json();
-      printError(errorData);
-      throw new Error(errorData);
-    }
+  const response = await fetch(
+    `https://api.weatherapi.com/v1/forecast.json?key=${API}&q=${city}&days=${ForecastDays}`
+  );
+  const errorResponse = document.querySelector(".error");
+  if (response.status !== 200) {
+    const errorData = await response.json();
+
+    console.log(errorData);
+    errorResponse.textContent = `Error code ${errorData.error.code}: ${errorData.error.message}`;
+    errorResponse.style.display = "block";
+  } else {
     const data = await response.json();
     console.log(data);
+    errorResponse.style.display = "none";
     return processJson(data);
-  } catch (err) {
-    console.error(`${err}`);
   }
 }
 
@@ -47,19 +48,24 @@ function processJson(data) {
   return weatherData;
 }
 
-function printError(response) {
-  console.log(
-    `Error Code: ${response.error.code} Message: ${response.error.message}`
-  );
-}
-
-searchBtn.addEventListener("click", (event) => {
+searchBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   let city = defaultCity;
   if (search.value !== "") {
     city = search.value;
   }
-  getWeather(city);
+  const weather = await getWeather(city);
+  console.log(weather);
+  if (weather !== undefined) {
+    generateToday(weather);
+    generateHourly(weather);
+    generateDaily(weather);
+
+    // calls twice to keep the same measurement
+    switchMeasurement();
+    switchMeasurement();
+  }
+
   search.value = "";
 });
 
@@ -71,8 +77,10 @@ console.log(weather);
 //weather.today.print();
 //weather.forecast[0].print();
 //weather.forecast[0].getHourly(0).print();
-generateToday(weather);
-generateHourly(weather);
-generateDaily(weather);
+if (weather !== undefined) {
+  generateToday(weather);
+  generateHourly(weather);
+  generateDaily(weather);
 
-switchMeasurement();
+  switchMeasurement();
+}

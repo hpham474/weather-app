@@ -1,7 +1,9 @@
-import { format, isSameDay, isToday } from "date-fns";
+import { format, isToday } from "date-fns";
 
 function generateDaily(data) {
   const dailyForecast = document.querySelector(".forecast");
+
+  dailyForecast.innerHTML = "";
 
   // get the next upcoming days
   const days = data.forecast;
