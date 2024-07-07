@@ -4,6 +4,7 @@ import processForecast from "./json/processForecast";
 import generateToday from "./interface/generateToday";
 import generateHourly from "./interface/generateHourly";
 import switchMeasurement from "./interface/setMeasurementUnit";
+import generateDaily from "./interface/generateDaily";
 
 const API = "7799c6fbb2534aaa8dc73800242806";
 const ForecastDays = 3;
@@ -72,5 +73,6 @@ console.log(weather);
 //weather.forecast[0].getHourly(0).print();
 generateToday(weather);
 generateHourly(weather);
+generateDaily(weather);
 
 switchMeasurement();

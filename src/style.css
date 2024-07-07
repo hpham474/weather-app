@@ -33,7 +33,7 @@ form {
 .content {
   width: 100%;
   max-width: 50rem;
-  
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -84,9 +84,9 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: .5rem;
-  
-  border: 1px solid black
+  gap: 0.5rem;
+
+  border: 1px solid black;
 }
 
 .today h4 {
@@ -109,7 +109,7 @@ form {
   font-size: 3rem;
 }
 
-.temperature-range p{
+.temperature-range p {
   font-size: 1rem;
 }
 
@@ -121,13 +121,13 @@ form {
 .hourly {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .hourly > div {
-  padding: .5rem;
+  padding: 0.5rem;
   display: grid;
-  grid-template-columns: repeat(26,8rem);
+  grid-template-columns: repeat(26, 8rem);
   grid-auto-flow: column;
   gap: 1rem;
   overflow-x: scroll;
@@ -143,12 +143,33 @@ form {
   align-items: center;
 }
 
+/* Daily Forecast */
+.forecast {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.forecast > div {
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: 1px solid black;
+}
+
 /* Footer */
 footer {
-  padding: .5rem;
+  padding: 0.5rem;
   margin-right: auto;
 }
 
 footer p {
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
