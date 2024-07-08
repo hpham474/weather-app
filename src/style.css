@@ -31,8 +31,50 @@ header {
 form {
   display: grid;
   grid-template-columns: 1fr 5rem;
-  gap: 1rem;
+  column-gap: 1rem;
 }
+
+form input {
+  height: 2.5rem;
+}
+
+.suggestions {
+  grid-column: 1 / 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestions button {
+  height: 2.5rem;
+  padding: .5rem;
+  text-align: left;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.suggestions button:hover {
+  background-color: lightgrey;
+}
+
+.suggestions button:active {
+  background-color: gray;
+}
+
+.suggestions button:not(:first-child) {
+  border-top: none;
+}
+
+.error {
+  display: none;
+
+  grid-column: 2 / 3;
+
+  font-size: 1rem;
+  color: red;
+}
+
+/* content */
 
 .content {
   width: 100%;
@@ -43,20 +85,6 @@ form {
   gap: 1rem;
 
   flex: 1 1 auto;
-}
-
-.content > h1 {
-  margin-bottom: 1rem;
-  font-size: 3rem;
-}
-
-.error {
-  display: none;
-
-  grid-column: 2 / 3;
-
-  font-size: 1rem;
-  color: red;
 }
 
 /* Today's Weather */

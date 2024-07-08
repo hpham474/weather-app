@@ -6,6 +6,7 @@ import generateDaily from "./interface/generateDaily";
 import getWeather from "./weather/getWeather";
 import { defaultCity } from "./weather/api";
 import updateByName from "./interface/updateByName";
+import search from "./interface/search";
 
 const searchBtn = document.querySelector(".search");
 const formatBtn = document.querySelector(".format");
@@ -16,6 +17,10 @@ searchBtn.addEventListener("click", async (event) => {
 });
 
 formatBtn.addEventListener("click", switchMeasurement);
+
+const searchBar = document.querySelector("#search-bar");
+searchBar.addEventListener("input", search);
+searchBar.addEventListener("focusin", search);
 
 const weather = await getWeather(defaultCity);
 
