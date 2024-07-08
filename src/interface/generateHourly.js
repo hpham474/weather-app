@@ -115,7 +115,7 @@ function generateHourly(data) {
       const temp_f = document.createElement("p");
 
       time.textContent = format(hourlyForecast.time, "hh:mm a");
-      icon.src = `http:${hourlyForecast.conditionIcon}`;
+      icon.src = `https:${hourlyForecast.conditionIcon}`;
       condition.textContent = hourlyForecast.condition;
       temp_c.textContent = `${hourlyForecast.temp_c} C`;
       temp_f.textContent = `${hourlyForecast.temp_f} F`;
