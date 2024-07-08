@@ -14,7 +14,6 @@ async function getWeather(city) {
     errorResponse.style.display = "block";
   } else {
     const data = await response.json();
-    console.log(data);
     errorResponse.style.display = "none";
     return processJson(data);
   }

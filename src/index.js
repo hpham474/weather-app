@@ -24,7 +24,6 @@ searchBar.addEventListener("focusin", search);
 
 const weather = await getWeather(defaultCity);
 
-console.log(weather);
 if (weather !== undefined) {
   generateToday(weather);
   generateHourly(weather);

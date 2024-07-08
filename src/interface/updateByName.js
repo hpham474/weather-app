@@ -1,4 +1,3 @@
-import { defaultCity } from "../weather/api";
 import getWeather from "../weather/getWeather";
 import generateHourly from "./generateHourly";
 import generateToday from "./generateToday";
@@ -8,12 +7,13 @@ import switchMeasurement from "./setMeasurementUnit";
 const search = document.querySelector("input");
 
 async function updateByName() {
-  let city = defaultCity;
+  let city = "";
   if (search.value !== "") {
     city = search.value;
+  } else {
+    return;
   }
   const weather = await getWeather(city);
-  console.log(weather);
   if (weather !== undefined) {
     generateToday(weather);
     generateHourly(weather);

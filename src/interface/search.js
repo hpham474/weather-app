@@ -20,7 +20,6 @@ async function search() {
     );
 
     const data = await response.json();
-    console.log(data);
 
     suggestions = data;
 
@@ -38,6 +37,7 @@ async function search() {
           switchMeasurement();
         }
         suggestionsDiv.innerHTML = "";
+        searchBar.value = "";
       });
       suggestionsDiv.appendChild(suggestEle);
     });
